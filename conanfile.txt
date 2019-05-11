@@ -1,0 +1,19 @@
+[requires]
+
+[build_requires]
+gtest/1.8.1@bincrafters/stable
+
+[options]
+gtest:shared=False
+gtest:build_gmock=True
+gtest:no_main=True
+
+[generators]
+cmake
+
+[imports]
+# Copies all dll files from packages bin folder to my local "bin" folder
+bin, *.dll -> ./bin @ folder=False, ignore_case=True, keep_path=False
+# Copies all dylib files from packages lib folder to my local "bin" folder
+lib, *.dylib* -> ./bin folder=False, ignore_case=True, keep_path=False
+., license* -> ./licenses @ folder=True, ignore_case=True, excludes=*.html *.jpeg, keep_path=False

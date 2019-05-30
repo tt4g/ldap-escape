@@ -28,7 +28,7 @@ int main(int argc, args** argv)
     using namespace tt4g;
 
     // Escape distinguished names (RFC 4514).
-    std::string dn = ldap::escapeName(" <Hello!> "); 
+    std::string dn = "dc=" + ldap::escapeName(" <Hello!> "); 
 
     // Escape search filter (RFC 4515).
     std::string filter = 
